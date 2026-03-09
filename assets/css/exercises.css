@@ -1,0 +1,38 @@
+/* ===============================
+   LISTA DE EXERCÍCIOS
+================================ */
+
+.doc-question {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 4px 10px;
+  margin: 22px 0;
+}
+
+.doc-question-number {
+  font-weight: 600;
+  font-size: 17px;
+  color: #1d4ed8;
+}
+
+.doc-question-text {
+  line-height: 1.7;
+}
+
+.doc-question-text p:first-child {
+  margin-top: 0;
+}
+
+.doc-question-text pre {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.doc-question-text blockquote {
+  margin: 10px 0;
+}
+
+.doc-question + .doc-question {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}

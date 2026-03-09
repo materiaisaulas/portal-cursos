@@ -1,0 +1,56 @@
+/* ===============================
+   IMG + TEXTO
+================================ */
+
+.doc-image-text {
+  display: flex;
+  gap: 24px;
+  margin: 35px 0;
+  align-items: flex-start;
+}
+
+.doc-image-text img {
+  width: 320px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.doc-image-text-content {
+  flex: 1;
+}
+
+/* ===============================
+   CAIXAS DIDÁTICAS
+================================ */
+
+.doc-tip {
+  background: #e8f5e9;
+  border-left: 5px solid #4caf50;
+  padding: 16px 18px;
+  margin: 24px 0;
+  border-radius: 6px;
+}
+
+.doc-warning {
+  background: #fff3e0;
+  border-left: 5px solid #ff9800;
+  padding: 16px 18px;
+  margin: 24px 0;
+  border-radius: 6px;
+}
+
+.doc-info {
+  background: #e3f2fd;
+  border-left: 5px solid #2196f3;
+  padding: 16px 18px;
+  margin: 24px 0;
+  border-radius: 6px;
+}
+
+.doc-tip > strong,
+.doc-info > strong,
+.doc-warning > strong {
+  display: block;
+  margin-bottom: 6px;
+}

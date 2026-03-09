@@ -1,0 +1,74 @@
+/* ===============================
+   ÁREA DE LEITURA
+================================ */
+
+.markdown-section {
+  max-width: 720px;
+  margin: auto;
+  padding: 60px 20px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.markdown-section p {
+  margin-bottom: 24px;
+  max-width: 75ch;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ===============================
+   LISTAS
+================================ */
+
+.markdown-section ul,
+.markdown-section ol {
+  margin: 16px 0 20px 26px;
+}
+
+.markdown-section li {
+  margin: 6px 0;
+  line-height: 1.7;
+}
+
+/* ===============================
+   TÍTULOS
+================================ */
+
+.markdown-section h1 {
+  font-size: 34px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.markdown-section h2 {
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.markdown-section h3 {
+  font-size: 22px;
+  margin-top: 34px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.markdown-section strong {
+  font-weight: 600;
+}
+
+/* ===============================
+   BLOCKQUOTE
+================================ */
+
+blockquote {
+  background: #f8fafc;
+  border-left: 4px solid #5aa469;
+  padding: 12px 16px;
+  margin: 20px 0;
+  border-radius: 6px;
+  color: #374151;
+}

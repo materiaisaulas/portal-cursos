@@ -1,0 +1,103 @@
+/* ===============================
+   TOPBAR
+================================ */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #4a7bd0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.icons span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* ===============================
+   CAMPO DE BUSCA
+================================ */
+
+.search input {
+  width: 340px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar-nav > ul > li > p {
+  font-weight: 600;
+  font-size: 15px;
+  color: #374151;
+  margin-top: 14px;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.sidebar-nav a:hover {
+  background: #eef2ff;
+}
+
+.sidebar-nav li.active > a {
+  background: #eef2ff;
+  border-radius: 6px;
+  padding-left: 6px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.sidebar-nav li > ul {
+  border-left: 1px solid #e5e7eb;
+  margin-left: 6px;
+  padding-left: 12px;
+}
+
+/* ===============================
+   CONTEÚDO
+================================ */
+
+.content {
+  padding-top: 60px;
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 900px) {
+
+  .doc-image-text {
+    flex-direction: column;
+  }
+
+  .doc-image-text img {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 240px;
+  }
+
+}

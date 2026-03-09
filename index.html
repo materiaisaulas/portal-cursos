@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Algoritmos e Programação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Material didático de Algoritmos e Programação">
+  
+  <!-- Tema Docsify -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  <!-- CSS personalizado -->
+
+  <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/code.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/blocks.css">
+  <link rel="stylesheet" href="assets/css/exercises.css">
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/index.css">
+</head>
+
+<body>
+
+  <div class="topbar">
+
+    <div class="logo">
+      Algoritmos e programação
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <div class="icons">
+      <span>✉️</span>
+      <span>👤</span>
+      <span>🎤</span>
+    </div>
+
+  </div>
+
+  <div id="app"></div>
+
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 1,
+      auto2top: true,
+
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            if (window.renderMathInElement) {
+              renderMathInElement(document.body, {
+                delimiters: [
+                  { left: "$$", right: "$$", display: true },
+                  { left: "$", right: "$", display: false }
+                ]
+              });
+            }
+          });
+        }
+      ]
+    }
+  </script>
+
+  <!-- Docsify -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="assets/js/counters.js"></script>
+  <script src="assets/js/compiler.js"></script>
+  <script src="assets/js/engine.js"></script>
+  <script src="assets/js/components/imgtext.js"></script>
+  <script src="assets/js/components/boxes.js"></script>
+  <script src="assets/js/components/blocks.js"></script>
+  <script src="assets/js/components/exercises.js"></script>
+  <script src="assets/js/plugin.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+  <!-- KaTeX -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+/* ===============================
+   TIPOGRAFIA GLOBAL
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2c3e50;
+  background: #f7f9fb;
+}
