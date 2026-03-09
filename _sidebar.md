@@ -2,7 +2,7 @@
 
 - Início
   - [Apresentação](/)
-  - [Ferramentas](ferramentas/readme.md)
+  - [Ferramentas](/ferramentas/)
 
 - Disciplinas
 
