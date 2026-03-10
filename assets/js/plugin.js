@@ -1,18 +1,11 @@
 (function () {
-
   function componentPlugin(hook, vm) {
-
     hook.beforeEach(function (markdown) {
-
-      markdown = processComponents(markdown, vm);
-
-      return markdown;
-
+      console.log("plugin beforeEach executou");
+      return processComponents(markdown, vm);
     });
-
   }
 
   window.$docsify = window.$docsify || {};
-  window.$docsify.plugins = [].concat(componentPlugin, window.$docsify.plugins || []);
-
+  window.$docsify.plugins = (window.$docsify.plugins || []).concat(componentPlugin);
 })();

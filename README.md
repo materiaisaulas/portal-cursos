@@ -9,6 +9,10 @@ Além dos conteúdos específicos das disciplinas, o site também disponibiliza 
 
 A organização do site busca favorecer a reutilização e a atualização contínua dos materiais, permitindo que diferentes disciplinas compartilhem recursos comuns e que novos conteúdos sejam incorporados ao longo do tempo.
 
+:::warning
+
 Espera-se que este ambiente funcione como um espaço de apoio ao estudo, consulta e experimentação, incentivando a prática constante e o desenvolvimento gradual das habilidades de programação.
+
+:::
 
 Prof. Dr. José Carmino 

@@ -1,3 +1,6 @@
 [submodule "ferramentas"]
 	path = ferramentas
 	url = https://github.com/materiaisaulas/ferramentas.git
+[submodule "algoritmos"]
+	path = algoritmos
+	url = https://github.com/materiaisaulas/algoritmos.git
