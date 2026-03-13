@@ -1,7 +1,7 @@
 registerComponent(function(markdown, vm) {
 
   return markdown.replace(
-    /(?:^|\n):::imgtext\s*([^\n]*)\n([\s\S]*?):::/g,
+    /(?:^|\r?\n):::imgtext\s*([^\n]*)\n([\s\S]*?):::/g,
     function (_, img, content) {
 
       img = img.trim();

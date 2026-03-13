@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <!-- CSS personalizado -->
-
-  <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+  <!-- CSS do projeto -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/typography.css">
@@ -22,21 +20,20 @@
   <link rel="stylesheet" href="assets/css/blocks.css">
   <link rel="stylesheet" href="assets/css/exercises.css">
 
-  <!-- KaTeX CSS -->
+  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <!-- Fonte para código -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/index.css">
+
 </head>
 
 <body>
 
+  <!-- Barra superior -->
   <div class="topbar">
-
     <div class="logo">
       Algoritmos e programação
-    </div>
-
-    <div class="search">
-      <input type="text" placeholder="Pesquisar...">
     </div>
 
     <div class="icons">
@@ -44,21 +41,28 @@
       <span>👤</span>
       <span>🎤</span>
     </div>
-
   </div>
 
+  <!-- Área onde o Docsify renderiza -->
   <div id="app"></div>
 
+
+  <!-- CONFIGURAÇÃO DO DOCSIFY (SEMPRE ANTES DO DOCSIFY) -->
   <script>
     window.$docsify = {
       name: '',
       repo: '',
       loadSidebar: true,
-      subMaxLevel: 1,
+      subMaxLevel: 0,
       auto2top: true,
+      relativePath: true,
 
-      alias: {
-        '/(.+)/_sidebar.md': '/$1/_sidebar.md'
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Pesquisar no material',
+        noData: 'Nenhum resultado encontrado',
+        depth: 3
       },
 
       plugins: [
@@ -75,13 +79,81 @@
           });
         }
       ]
-    }
+    };
   </script>
 
+
+  <!-- DOCSIFY -->
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 
-  <script src="assets/js/engine.js"></script>
+  <script>
 
+    function saveSidebarState() {
+      const openItems = [];
+      document.querySelectorAll('.sidebar-nav li.open').forEach(function (li) {
+        const link = li.querySelector('a');
+        if (link) {
+          openItems.push(link.getAttribute('href'));
+        }
+      });
+      localStorage.setItem('sidebar-open', JSON.stringify(openItems));
+    }
+
+
+    function restoreSidebarState() {
+      const saved = JSON.parse(localStorage.getItem('sidebar-open') || "[]");
+      document.querySelectorAll('.sidebar-nav li').forEach(function (li) {
+        const link = li.querySelector('a');
+        if (link && saved.includes(link.getAttribute('href'))) {
+          li.classList.add('open');
+        }
+      });
+    }
+
+
+    function enableToggle() {
+      document.querySelectorAll('.sidebar-nav li').forEach(function (li) {
+        const sub = li.querySelector(':scope > ul');
+        if (sub) {
+          const link = li.querySelector(':scope > p, :scope > a');
+          link.addEventListener('click', function (e) {
+            if (sub) {
+              e.preventDefault();
+            }
+            li.classList.toggle('open');
+            saveSidebarState();
+          });
+        }
+      });
+    }
+
+    window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function (hook) {
+      hook.doneEach(function () {
+        setTimeout(function () {
+          restoreSidebarState();
+          enableToggle();
+        }, 100);
+      });
+    });
+
+  </script>
+
+
+  <!-- PLUGINS DOCSIFY -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+
+  <!-- EXTENSÕES -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+  <!-- KaTeX -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+
+  <!-- SCRIPTS DO PROJETO -->
+  <script src="assets/js/engine.js"></script>
   <script src="assets/js/counters.js"></script>
   <script src="assets/js/compiler.js"></script>
 
@@ -91,11 +163,6 @@
   <script src="assets/js/components/exercises.js"></script>
 
   <script src="assets/js/plugin.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
 </body>
 

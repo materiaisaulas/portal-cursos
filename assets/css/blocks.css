@@ -30,10 +30,10 @@
   border-radius: 6px;
 }
 
-.doc-definition > strong,
-.doc-example > strong,
-.doc-algorithm > strong,
-.doc-exercise > strong {
+.doc-definition>strong,
+.doc-example>strong,
+.doc-algorithm>strong,
+.doc-exercise>strong {
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
@@ -62,3 +62,193 @@
   color: #374151;
   line-height: 1.7;
 }
+
+/* ===============================
+   Note post-it
+================================ */
+
+.doc-note-postit {
+  position: relative;
+  background: #fff9c9;
+  padding: 18px 20px;
+  margin: 24px 0;
+  border-radius: 4px;
+
+  /* sombra de papel */
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+
+  /* leve rotação para parecer colado */
+  transform: rotate(-0.6deg);
+
+  /* fonte um pouco maior para leitura */
+  font-size: 15px;
+}
+
+/* fita adesiva no topo */
+.doc-note-postit::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.6);
+
+  top: -10px;
+  left: 20px;
+
+  transform: rotate(-6deg);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* título */
+.doc-note-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #7a5c00;
+}
+
+/* texto */
+.doc-note-text {
+  line-height: 1.5;
+  color: #444;
+}
+
+/* ===============================
+   compare em até 3 colunas 
+================================ */
+
+.doc-compare {
+  margin: 32px 0;
+  padding: 20px;
+  background: #eef3ff;
+  border-left: 6px solid #4c7cf0;
+  border-radius: 6px;
+}
+
+/* título da comparação */
+
+.doc-compare-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #2a3e8c;
+}
+
+/* grid das colunas */
+
+.doc-compare-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  align-items:stretch;
+}
+
+/* cada exemplo */
+
+.doc-compare-item {
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* explicação final */
+
+.doc-compare-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #cfd9ff;
+  text-align: center;
+  font-weight: 500;
+  color: #2c3e7a;
+}
+
+.doc-compare-item pre{
+  flex:1;
+}
+
+.doc-compare-footer code,
+.doc-compare-footer pre {
+  text-align: left;
+}
+
+/* ===============================
+   pitfall com e sem imagem 
+================================ */
+
+.doc-pitfall {
+  margin: 32px 0;
+  padding: 20px;
+  background: #fff7e6;
+  border-left: 6px solid #f2b544;
+  border-radius: 10px;
+}
+
+.doc-pitfall-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.doc-pitfall-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.doc-pitfall-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #8a5a00;
+}
+
+.doc-pitfall-body.has-image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.doc-pitfall-body.no-image {
+  display: block;
+}
+
+.doc-pitfall-code pre {
+  margin: 0;
+  border-radius: 8px;
+}
+
+.doc-pitfall-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-pitfall-image img{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.doc-pitfall-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1d9a6;
+  color: #6b4b00;
+}
+
+.doc-pitfall-footer p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .doc-pitfall-body.has-image {
+    grid-template-columns: 1fr;
+  }
+}
+

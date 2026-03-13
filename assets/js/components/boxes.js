@@ -5,10 +5,9 @@ registerComponent(function(markdown, vm) {
   }
 
   markdown = markdown.replace(
-    /(?:^|\n):::tip\n([\s\S]*?):::/g,
+    /(?:^|\r?\n):::tip\n([\s\S]*?):::/g,
     (_, content) => `
 <div class="doc-tip">
-<strong>Dica</strong>
 <div class="doc-tip-text">
 ${compile(content)}
 </div>
@@ -16,7 +15,7 @@ ${compile(content)}
   );
 
   markdown = markdown.replace(
-    /(?:^|\n):::warning\n([\s\S]*?):::/g,
+    /(?:^|\r?\n):::warning\n([\s\S]*?):::/g,
     (_, content) => `
 <div class="doc-warning">
 <strong>Atenção</strong>
@@ -27,10 +26,9 @@ ${compile(content)}
   );
 
   markdown = markdown.replace(
-    /(?:^|\n):::info\n([\s\S]*?):::/g,
+    /(?:^|\r?\n):::info\n([\s\S]*?):::/g,
     (_, content) => `
 <div class="doc-info">
-<strong>Informação</strong>
 <div class="doc-info-text">
 ${compile(content)}
 </div>

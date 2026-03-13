@@ -1,7 +1,5 @@
-- 
-
-- Início
-  - [Apresentação](/)
-  - [instalações](/ferramentas/)
+- [Apresentação](/)
+- [Instalações](/ferramentas/)
+- [Algoritmos](/algoritmos/)
 
 
