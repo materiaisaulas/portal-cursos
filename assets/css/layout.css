@@ -51,14 +51,26 @@ body {
 }
 
 /* Conteúdo principal deslocado para não ficar sob a topbar */
-.content {
+/* .content {
+  max-width: none;
   top: 60px !important;
   padding-top: 0 !important; 
-}
+} */
 
 /* Em alguns temas do Docsify, a área interna precisa de ajuste extra */
-.markdown-section {
+/* .markdown-section {
+  max-width: 1000px;
+  margin: 0 auto;
   padding-top: 24px;
+} */
+
+.content {
+  max-width: none;
+}
+
+.markdown-section {
+  max-width: 900px !important;
+  margin: 0 auto;
 }
 
 
@@ -105,8 +117,73 @@ body {
 /* ===============================
    SIDEBAR / MENU
 ================================ */
-
+.sidebar-nav a:hover {
+  background: #eef2ff;
+}
+/* largura interna do menu */
 .sidebar-nav {
+  padding: 16px 14px;
+}
+
+/* tamanho da fonte do menu */
+.sidebar-nav a {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* espaçamento vertical dos itens */
+.sidebar-nav li {
+  margin: 2px 0;
+}
+
+/* indentação dos subníveis */
+.sidebar-nav ul ul {
+  padding-left: 14px;
+}
+
+/* remove o ícone padrão */
+.sidebar-nav .collapse-arrow {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
+
+/* ícone personalizado */
+.sidebar-nav .collapse-arrow::before {
+  content: "▸";
+  font-size: 12px;
+  color: #6b7280;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* quando aberto */
+.sidebar-nav li.open > .collapse-arrow::before {
+  transform: rotate(90deg);
+  color: #0553fc;
+}
+
+/* item ativo */
+.sidebar-nav li.active > a {
+  background: #eef2ff;
+  /* color: #2563eb; */
+  font-weight: 600;
+  /* border-left: 3px solid #2563eb; */
+  padding-left: 7px;
+}
+
+/* capítulo principal aberto */
+.sidebar-nav li.open > a,
+.sidebar-nav li.open > p {
+  background: #f5f8ff;
+  color: #0553fc;
+  font-weight: 600;
+  /* border-left: 3px solid #0553fc; */
+  padding-left: 7px;
+}
+
+/* .sidebar-nav {
   padding: 12px;
   box-sizing: border-box;
 }
@@ -147,15 +224,20 @@ body {
   border-left: 1px solid #e5e7eb;
   margin-left: 6px;
   padding-left: 12px;
-}
+} */
 
-.sidebar-nav li ul {
-  display: none;
-}
-
-.sidebar-nav li.open>ul {
+/* estes foram removidos */ 
+/* .sidebar-nav li ul {
   display: block;
-}
+} */
+
+/* .sidebar-nav li ul {
+  display: none;
+} */
+
+/* .sidebar-nav li.open>ul {
+  display: block;
+} */
 
 /* ===============================
    RESPONSIVO

@@ -9,6 +9,8 @@
 
   <!-- Tema Docsify -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- CSS do projeto -->
@@ -54,8 +56,8 @@
       repo: '',
       loadSidebar: true,
       subMaxLevel: 0,
+      sidebarDisplayLevel: 0,
       auto2top: true,
-      relativePath: true,
 
       search: {
         maxAge: 86400000,
@@ -65,80 +67,16 @@
         depth: 3
       },
 
-      plugins: [
-        function (hook) {
-          hook.doneEach(function () {
-            if (window.renderMathInElement) {
-              renderMathInElement(document.body, {
-                delimiters: [
-                  { left: "$$", right: "$$", display: true },
-                  { left: "$", right: "$", display: false }
-                ]
-              });
-            }
-          });
-        }
-      ]
+
     };
   </script>
 
 
   <!-- DOCSIFY -->
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
-  <script>
-
-    function saveSidebarState() {
-      const openItems = [];
-      document.querySelectorAll('.sidebar-nav li.open').forEach(function (li) {
-        const link = li.querySelector('a');
-        if (link) {
-          openItems.push(link.getAttribute('href'));
-        }
-      });
-      localStorage.setItem('sidebar-open', JSON.stringify(openItems));
-    }
-
-
-    function restoreSidebarState() {
-      const saved = JSON.parse(localStorage.getItem('sidebar-open') || "[]");
-      document.querySelectorAll('.sidebar-nav li').forEach(function (li) {
-        const link = li.querySelector('a');
-        if (link && saved.includes(link.getAttribute('href'))) {
-          li.classList.add('open');
-        }
-      });
-    }
-
-
-    function enableToggle() {
-      document.querySelectorAll('.sidebar-nav li').forEach(function (li) {
-        const sub = li.querySelector(':scope > ul');
-        if (sub) {
-          const link = li.querySelector(':scope > p, :scope > a');
-          link.addEventListener('click', function (e) {
-            if (sub) {
-              e.preventDefault();
-            }
-            li.classList.toggle('open');
-            saveSidebarState();
-          });
-        }
-      });
-    }
-
-    window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function (hook) {
-      hook.doneEach(function () {
-        setTimeout(function () {
-          restoreSidebarState();
-          enableToggle();
-        }, 100);
-      });
-    });
-
-  </script>
-
-
+  
   <!-- PLUGINS DOCSIFY -->
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>

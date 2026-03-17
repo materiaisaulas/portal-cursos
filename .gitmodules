@@ -4,3 +4,6 @@
 [submodule "algoritmos"]
 	path = algoritmos
 	url = https://github.com/materiaisaulas/algoritmos.git
+[submodule "flutter"]
+	path = flutter
+	url = https://github.com/materiaisaulas/flutter.git
