@@ -10,3 +10,6 @@
 [submodule "ihc"]
 	path = ihc
 	url = https://github.com/materiaisaulas/ihc.git
+[submodule "react"]
+	path = react
+	url = https://github.com/materiaisaulas/react.git
